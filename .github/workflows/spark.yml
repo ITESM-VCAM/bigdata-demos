@@ -17,7 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: ls -la
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
@@ -30,3 +29,5 @@ jobs:
           spark-version: "3.5.3"
           hadoop-version: "3"
       - run: spark-submit --version
+      - run: spark-submit --master local hello-spark.py
+      - run: ls -la
